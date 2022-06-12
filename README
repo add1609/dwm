@@ -1,0 +1,184 @@
+
+DWM(1)                      General Commands Manual                     DWM(1)
+
+
+
+NAME
+       dwm - dynamic window manager (Ahmed Sami <ahmedsami03@protonmail.com>'s
+       build)
+
+SYNOPSIS
+       dwm [-v]
+
+DESCRIPTION
+       dwm is a dynamic window manager for X.
+
+       dwm "orders" windows based on recency and primacy,  while  dwm  layouts
+       may change, the most recent "master" window is shown in the most promi‐
+       nent position. There are bindings for  cycling  through  and  promoting
+       windows to the master position.
+
+       Windows are grouped by tags. Each window can be tagged with one or mul‐
+       tiple tags. Selecting certain tags  displays  all  windows  with  these
+       tags.
+
+       Each  screen  contains  a small status bar which displays all available
+       tags, the layout, the title of the focused window, and  the  text  read
+       from  the root window name property, if the screen is focused. A float‐
+       ing window is indicated with an empty square and a  maximised  floating
+       window is indicated with a filled square before the windows title.  The
+       selected tags are indicated with a different color. The tags of the fo‐
+       cused window are indicated with a filled square in the top left corner.
+       The tags which are applied to one or more windows are indicated with an
+       empty square in the top left corner.
+
+       dwm draws a small border around windows to indicate the focus state.
+
+       ~/.local/bin/  is  the  path  to  my helper scripts. You can find theme
+       here: https://github.com/add1609/artixrice/.local/bin/
+
+       libxft-bgra-git should be installed for this build of dwm.  Arch  users
+       may install it via the AUR. Color characters and emoji are enabled, but
+       these will cause crashes without the fix libxft-bgra-git offers.
+
+OPTIONS
+       -v     prints version information to standard output, then exits.
+
+Keybindings
+       Super-Enter
+              Start terminal via ~/.local/bin/samedir and st(1).
+
+       Super-q
+              Close focused window.
+
+       Super-d
+              Start dmenu(1).
+
+       Super-b
+              Toggle dwmblocks on/off (default: on).
+
+       Super-a
+              Toggle gaps on/off (default: off).
+
+       Super-Shift-a
+              Reset gaps to default size (default: 0).
+
+       Super-s
+              Toggle sticky on/off (default: off).
+
+       Super-f
+              Toggle fullscreen on/off (default: off).
+
+       Super-Tab
+              Toggle smart gaps on/off (default: off).
+
+       Shift-Alt-k
+              Increase terminal fontsize.
+
+       Shift-Alt-j
+              Decrease terminal fontsize.
+
+       Super-o
+              Increase number of master windows.
+
+       Super-Shift-o
+              Decrease number of master windows.
+
+       Super-0
+              Show all tags.
+
+       Super-h
+              Decrease master window size.
+
+       Super-l
+              Increase master window size.
+
+       Super-w
+              Start $BROWSER (default: librewolf).
+
+       Super-p
+              Toggle mpc(1) on/off.
+
+       Super-Shift-w
+              Start nmtui(1).
+
+       Super-Shift-p
+              Pause both mpc(1) and mpv(1).
+
+       Super-comma
+              Previous track mpc(1).
+
+       Super-period
+              Next track mpc(1).
+
+       Super-m
+              Start ncmpcpp(1).
+
+       Super-Shift-m
+              Mute all audio pamixer(1).
+
+       Super-minus
+              Decrease volume by 5% pamixer(1).
+
+       Super-equal
+              Increase volume by 5% pamixer(1).
+
+       Super-F4
+              Open audio interface pulsemixer(1).
+
+       Super-Space
+              Toggle master window.
+
+       Super-Shift-Space
+              Toggle floating on current window.
+
+       Super-z
+              Increase gaps.
+
+       Super-x
+              Decrease gaps.
+
+       Super-Left
+              Switch to monitor on left.
+
+       Super-Right
+              Switch to monitor on right.
+
+       Super-Shift-Left
+              Send current window to monitor on left.
+
+       Super-Shift-Right
+              Send current window to monitor on right.
+
+       Super-Shift-Enter
+              Open scratchpad terminal.
+
+       Super-F3
+              Select display ~/.local/bin/displayselect and dmenu(1).
+
+       Super-Print
+              Take screenshot with selection maim(1).
+
+       Super-Shift-Print
+              Start recording
+
+       Super-Delete
+              Stop recording ~/.local/bin/dmenurecord and ffmpeg(1).
+
+CUSTOMIZATION
+       dwm is customized by creating a custom config.h and  (re)compiling  the
+       source code. This keeps it fast, secure and simple.
+
+SIGNALS
+       SIGHUP - 1
+              Restart the dwm process.
+
+       SIGTERM - 15
+              Cleanly terminate the dwm process.
+
+SEE ALSO
+       dmenu(1), st(1)
+
+
+
+                                    dwm-6.2                             DWM(1)

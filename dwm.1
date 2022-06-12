@@ -1,0 +1,210 @@
+.\" Process this file with
+.\" groff -man -Tascii dwm.1
+.\"
+
+.TH DWM 1 dwm\-6.2
+.SH NAME
+dwm \- dynamic window manager (Ahmed Sami <ahmedsami03@protonmail.com>'s build)
+.SH SYNOPSIS
+.B dwm
+.RB [ \-v ]
+.SH DESCRIPTION
+dwm is a dynamic window manager for X.
+.P
+dwm "orders" windows based on recency and primacy, while dwm layouts may
+change, the most recent "master" window is shown in the most prominent
+position. There are bindings for cycling through and promoting windows to the
+master position.
+.P
+Windows are grouped by tags. Each window can be tagged with one or multiple
+tags. Selecting certain tags displays all windows with these tags.
+.P
+Each screen contains a small status bar which displays all available tags, the
+layout, the title of the focused window, and the text read from the root window
+name property, if the screen is focused. A floating window is indicated with an
+empty square and a maximised floating window is indicated with a filled square
+before the windows title.  The selected tags are indicated with a different
+color. The tags of the focused window are indicated with a filled square in the
+top left corner.  The tags which are applied to one or more windows are
+indicated with an empty square in the top left corner.
+.P
+dwm draws a small border around windows to indicate the focus state.
+.P
+.I ~/.local/bin/
+is the path to my helper scripts. You can find theme here:
+.I https://github.com/add1609/artixrice/.local/bin/
+.P
+.I
+libxft-bgra-git
+should be installed for this build of dwm. Arch users may install it via the
+AUR. Color characters and emoji are enabled, but these will cause crashes
+without the fix
+.I
+libxft-bgra-git
+offers.
+.SH OPTIONS
+.TP
+.B \-v
+prints version information to standard output, then exits.
+.SH Keybindings
+.TP
+.B Super\-Enter
+Start terminal via
+.BR ~/.local/bin/samedir
+and
+.BR st(1).
+.TP
+.B Super\-q
+Close focused window.
+.TP
+.B Super\-d
+Start
+.BR dmenu(1).
+.TP
+.B Super\-b
+Toggle
+.BR dwmblocks
+on/off (default: on).
+.TP
+.B Super\-a
+Toggle gaps on/off (default: off).
+.TP
+.B Super\-Shift\-a
+Reset gaps to default size (default: 0).
+.TP
+.B Super\-s
+Toggle sticky on/off (default: off).
+.TP
+.B Super\-f
+Toggle fullscreen on/off (default: off).
+.TP
+.B Super\-Tab
+Toggle smart gaps on/off (default: off).
+.TP
+.B Shift\-Alt\-k
+Increase terminal fontsize.
+.TP
+.B Shift\-Alt\-j
+Decrease terminal fontsize.
+.TP
+.B Super\-o
+Increase number of master windows.
+.TP
+.B Super\-Shift\-o
+Decrease number of master windows.
+.TP
+.B Super\-0
+Show all tags.
+.TP
+.B Super\-h
+Decrease master window size.
+.TP
+.B Super\-l
+Increase master window size.
+.TP
+.B Super\-w
+Start
+.BR $BROWSER
+(default: librewolf).
+.TP
+.B Super\-p
+Toggle
+.BR mpc(1)
+on/off.
+.TP
+.B Super\-Shift\-w
+Start
+.BR nmtui(1).
+.TP
+.B Super\-Shift\-p
+Pause both
+.BR mpc(1)
+and
+.BR mpv(1).
+.TP
+.B Super\-comma
+Previous track
+.BR mpc(1).
+.TP
+.B Super\-period
+Next track
+.BR mpc(1).
+.TP
+.B Super\-m
+Start
+.BR ncmpcpp(1).
+.TP
+.B Super\-Shift\-m
+Mute all audio
+.BR pamixer(1).
+.TP
+.B Super\-minus
+Decrease volume by 5%
+.BR pamixer(1).
+.TP
+.B Super\-equal
+Increase volume by 5%
+.BR pamixer(1).
+.TP
+.B Super\-F4
+Open audio interface
+.BR pulsemixer(1).
+.TP
+.B Super\-Space
+Toggle master window.
+.TP
+.B Super\-Shift\-Space
+Toggle floating on current window.
+.TP
+.B Super\-z
+Increase gaps.
+.TP
+.B Super\-x
+Decrease gaps.
+.TP
+.B Super\-Left
+Switch to monitor on left.
+.TP
+.B Super\-Right
+Switch to monitor on right.
+.TP
+.B Super\-Shift\-Left
+Send current window to monitor on left.
+.TP
+.B Super\-Shift\-Right
+Send current window to monitor on right.
+.TP
+.B Super\-Shift\-Enter
+Open scratchpad terminal.
+.TP
+.B Super\-F3
+Select display
+.BR ~/.local/bin/displayselect
+and
+.BR dmenu(1).
+.TP
+.B Super\-Print
+Take screenshot with selection
+.BR maim(1).
+.TP
+.B Super\-Shift\-Print
+Start recording
+.TP
+.B Super\-Delete
+Stop recording
+.BR ~/.local/bin/dmenurecord
+and
+.BR ffmpeg(1).
+.SH CUSTOMIZATION
+dwm is customized by creating a custom config.h and (re)compiling the source
+code. This keeps it fast, secure and simple.
+.SH SIGNALS
+.TP
+.B SIGHUP - 1
+Restart the dwm process.
+.TP
+.B SIGTERM - 15
+Cleanly terminate the dwm process.
+.SH SEE ALSO
+.BR dmenu (1),
+.BR st (1)
